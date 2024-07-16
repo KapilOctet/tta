@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Widget</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #chat-popup { height: 100vh; display: flex; flex-direction: column; }
+        #chat-messages { flex-grow: 1; overflow-y: auto; }
+        .chat-message { transition: all 0.3s ease; opacity: 0; transform: translateY(20px); }
+        .chat-message.show { opacity: 1; transform: translateY(0); }
+        .prompt-box { transition: all 0.2s ease; }
+        .prompt-box:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div id="chat-popup" class="bg-white">
+        <div id="chat-header" class="flex justify-between items-center py-2 px-4 bg-gradient-to-r from-blue-600 to-indigo-900 text-white">
+            <h3 class="m-0 text-sm font-semibold">AI Chatbot</h3>
+            <button id="close-popup" class="bg-transparent border-none text-white cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="p-4"></div>
+        <div id="default-prompts" class="p-4 border-t border-gray-200 grid grid-cols-2 gap-2">
+            <div class="prompt-box bg-gray-100 p-2 rounded cursor-pointer text-sm">What services do you offer?</div>
+            <div class="prompt-box bg-gray-100 p-2 rounded cursor-pointer text-sm">How can I contact support?</div>
+            <div class="prompt-box bg-gray-100 p-2 rounded cursor-pointer text-sm">What are your business hours?</div>
+            <div class="prompt-box bg-gray-100 p-2 rounded cursor-pointer text-sm">Do you have any ongoing promotions?</div>
+        </div>
+        <div id="chat-input-container" class="p-4 border-t border-gray-200">
+            <div class="flex space-x-4 items-center">
+                <input type="text" id="chat-input" class="flex-1 border border-gray-300 rounded-md px-4 py-2 outline-none" placeholder="Type your message...">
+                <button id="chat-submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="./chat-iframe.js"></script>
+</body>
+</html>
