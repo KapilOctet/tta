@@ -81,7 +81,7 @@
   };
 
   window.addEventListener('load', initChatWidget);
-
+  window.addEventListener('load', loadTailwindCSS);
   window.addEventListener('message', (event) => {
     if (event.data === 'close-chat') {
       chatIframe.style.height = '0';
