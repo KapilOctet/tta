@@ -1,4 +1,14 @@
 (function() {
+  const loadTailwindCSS = () => {
+    var script = document.createElement('script');
+    script.src = 'https://cdn.tailwindcss.com';
+    script.onload = () => {
+      console.log('Tailwind CSS has been loaded');
+      initChatWidget();
+    };
+    document.head.appendChild(script);
+  };
+
   let chatWidgetContainer, chatTopBar, chatLoader, chatIframe;
   let iframeLoaded = false;
 
