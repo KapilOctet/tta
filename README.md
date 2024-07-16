@@ -1,1 +1,1 @@
-<!-- Example project -->
+<!-- This is the chat plugin -->

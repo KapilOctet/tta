@@ -47,7 +47,7 @@
   const loadIframe = () => {
     if (!iframeLoaded) {
       showLoader();
-      chatIframe.src = 'chat-iframe.html';
+      chatIframe.src = 'https://kapiloctet.github.io/tta/chat-iframe.html';
       chatIframe.onload = () => {
         iframeLoaded = true;
         hideLoader();
